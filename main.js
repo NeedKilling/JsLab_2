@@ -18,9 +18,6 @@ function filterfail(data, score=60 ){
     }
     return fail;
 }
-console.log("Список должников", filterfail(grades));
-
-
 
 function findTopStudent(data){
     let topStudent = data[0];
@@ -34,7 +31,6 @@ function findTopStudent(data){
 
     return topStudent.name;
 }
-console.log(findTopStudent(grades));
 
 function addLetterGrade(data){
     data.forEach((item) => {
@@ -43,8 +39,6 @@ function addLetterGrade(data){
     console.log(data)
 }
 
-addLetterGrade(grades)
-
 function calculateAverage(data) {
     const total = data.reduce(function (sum, student) {
         return sum + student.score;
@@ -52,5 +46,9 @@ function calculateAverage(data) {
     return total / data.length;
 
 }
-console.log('средний балл:', calculateAverage(grades))
 
+
+console.log('средний балл:', calculateAverage(grades))
+console.log(findTopStudent(grades));
+console.log("Список должников", filterfail(grades));
+addLetterGrade(grades)
