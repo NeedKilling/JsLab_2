@@ -8,6 +8,19 @@ const grades = [
     { name: "Студент_X", score: 45 }
 ];
 
+function filterfail(data, score=60 ){
+    let fail=[];
+
+    for (let i =0; i < data.length; i++){
+        if (data[i].score < score){
+            fail.push(data[i].name);
+        }
+    }
+    return fail;
+}
+console.log("Список должников", filterfail(grades));
+
+
 
 function findTopStudent(data){
     let topStudent = data[0];
