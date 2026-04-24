@@ -9,9 +9,6 @@ const grades = [
 ];
 
 
-
-
-
 function findTopStudent(data){
     let topStudent = data[0];
     for (let i = 1;
@@ -25,3 +22,22 @@ function findTopStudent(data){
     return topStudent.name;
 }
 console.log(findTopStudent(grades));
+
+function addLetterGrade(data){
+    data.forEach((item) => {
+        item["letter"] = item.score >= 90 ? "A": item.score < 75 ? "C" : "B";
+    });
+    console.log(data)
+}
+
+addLetterGrade(grades)
+
+function calculateAverage(data) {
+    const total = data.reduce(function (sum, student) {
+        return sum + student.score;
+    }, 0)
+    return total / data.length;
+
+}
+console.log('средний балл:', calculateAverage(grades))
+
