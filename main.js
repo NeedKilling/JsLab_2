@@ -8,6 +8,21 @@ const grades = [
     { name: "Студент_X", score: 45 }
 ];
 
+
+function findTopStudent(data){
+    let topStudent = data[0];
+    for (let i = 1;
+        i < data.length; 
+        i++){
+        if(data[i].score  > topStudent.score){
+            topStudent=data[i];
+        }
+    } 
+
+    return topStudent.name;
+}
+console.log(findTopStudent(grades));
+
 function addLetterGrade(data){
     data.forEach((item) => {
         item["letter"] = item.score >= 90 ? "A": item.score < 75 ? "C" : "B";
@@ -25,3 +40,4 @@ function calculateAverage(data) {
 
 }
 console.log('средний балл:', calculateAverage(grades))
+
