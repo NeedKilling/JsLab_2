@@ -7,6 +7,16 @@ const grades = [
     { name: "Даша", score: 88 },
     { name: "Студент_X", score: 45 }
 ];
+
+function addLetterGrade(data){
+    data.forEach((item) => {
+        item["letter"] = item.score >= 90 ? "A": item.score < 75 ? "C" : "B";
+    });
+    console.log(data)
+}
+
+addLetterGrade(grades)
+
 function calculateAverage(data) {
     const total = data.reduce(function (sum, student) {
         return sum + student.score;
